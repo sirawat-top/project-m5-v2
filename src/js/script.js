@@ -37,9 +37,10 @@ const getproducts =async ()=>{
             <div class="card-body">
               <h5 class="card-title">${product.prdname}</h5>
               <p class="card-text">${product.prdPrice}</p>
+              <p class="thb">THB</p>
               
             </div>
-            <button onclick="location.href='productdetail.html?id=${product.id}';" class="btn btn-primary">Add to cart</button>
+            <button onclick="location.href='productdetail.html?id=${product.id}';" class="btn btn-primary btn-dark">Add to cart</button>
           </div> 
             `
         )

@@ -30,7 +30,7 @@ const billingde =async ()=>{
         .map(
             (index)=>
             `
-            <p style="color: red;">${index.prdPrice} bath</p>
+            <p style="color: #B02B2B;">${index.prdPrice} bath</p>
             `
         )
        

@@ -75,7 +75,7 @@ const cartdetail =async ()=>{
       <p id="prdPrice">${detail.prdPrice} bath</p>
       </div>
     </div>
-    <button onclick="location.href='payment.html?id=${detail.id}';"class="btn btn-primary">Check out</button>
+    <button onclick="location.href='payment.html?id=${detail.id}';"class="btn btn-primary btn-dark">Check out</button>
       </div>
         
         

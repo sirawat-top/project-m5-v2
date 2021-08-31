@@ -20,7 +20,7 @@ const getdetail =async ()=>{
 
             <div class="col-5 col-s-12">
             <h4>${detail.prdname}</h4>
-            <p>${detail.prdPrice} bath</p>
+            <p class="detailproduct">${detail.prdPrice} bath</p>
             <h4>Product Detail</h4>
             <p>
             ${detail.txtDetail}
@@ -37,7 +37,7 @@ const getdetail =async ()=>{
              <li><a class="dropdown-item" href="#">XL</a></li>
          </ul>
          </div>
-         <button onclick="location.href='cart.html?id=${detail.id}';" class="btn btn-primary">Add to cart</button>
+         <button onclick="location.href='cart.html?id=${detail.id}';" class="btn btn-primary btn-dark">Add to cart</button>
        
         
             </div>
