@@ -37,7 +37,7 @@ const getdetail =async ()=>{
              <li><a class="dropdown-item" href="#">XL</a></li>
          </ul>
          </div>
-         <button onclick="location.href='cart.html?id=${detail.id}';" class="btn btn-primary btn-dark">Add to cart</button>
+         <button  class="AddToBlack">Add to cart</button>
        
         
             </div>
@@ -45,6 +45,25 @@ const getdetail =async ()=>{
     `
 )
 .join("");
+
+const adddata = document.querySelector('.AddToBlack')
+        adddata.addEventListener('click', () => {
+            let select = document.querySelector('#dataSize').value
+            carts = JSON.parse(localStorage.getItem("carts") || "[]");
+            console.log('carts :>> ', carts.length);
+            const cart = {
+                id: dataFetch[0].id,
+                name: dataFetch[0].prdname,
+                price: dataFetch[0].prdPrice,
+                img: dataFetch[0].prdImageUrl,
+                size: select,
+              };
+              console.log('cart: ', cart); 
+              carts.push(cart);
+              localStorage.setItem(`cart`, JSON.stringify(carts));
+              location.href = `cart.html`
+            
+        })
     }catch{
         console.log(`e`,e);
     }

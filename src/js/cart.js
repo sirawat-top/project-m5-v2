@@ -1,22 +1,21 @@
-let searchParams = new URLSearchParams(window.location.search).get("id");
-      console.log(searchParams);
-const cartdetail =async ()=>{
+const GetLocal = localStorage.getItem('carts'); 
+const Get = JSON.parse(GetLocal)
+console.log('carts : ',(Get));
+
+
+const cartdetail = ()=>{
   try{
       
-      const response = await axios.get("https://6102d7aa79ed680017482359.mockapi.io/productdetail");
-      document.getElementById('cart').innerHTML=response.data
-      .filter((x=> x.id == searchParams))
-      .map(
-      (detail)=>
+    document.querySelector('.detail').innerHTML = Get.map((detail) =>
   `
       <div class="col-8">
       <div class="row">
       <div class="col-6">
-      <img src="${detail.prdImageUrl}" id="img"> 
+      <img src="${detail.img}" id="img"> 
     </div>
     <div class="col-6">
-      <p id="prdname">${detail.prdname}</p>
-      <p id="prdPrice">${detail.prdPrice} bath</p>
+      <p id="prdname">${detail.name}</p>
+      <p id="prdPrice">${detail.price} bath</p>
    
    
     <div class="row">
